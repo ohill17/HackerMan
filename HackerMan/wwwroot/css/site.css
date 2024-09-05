@@ -1,0 +1,55 @@
+html, body {
+    background-color: #111; /* Set the background to #111 to fill any gaps */
+    color: #EE0000;
+    font-family: Consolas, Courier, monospace;
+    text-shadow: 0 0 15px #f00;
+    height: 100%;
+    font-size: 30px;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Apply glow effect */
+.glow {
+    color: #f00 !important; /* !important to override Bootstrap styles */
+    text-shadow: 0px 0px 10px #f00;
+}
+
+/* Make sure spans are properly styled */
+span {
+    display: inline-block;
+    padding: 0 10px;
+}
+
+/* Ensure Bootstrap buttons match your theme */
+.btn, .btn-primary {
+    background-color: #411;
+    color: #f00;
+    font-family: Consolas, Courier, monospace;
+    text-shadow: 0 0 10px #f00;
+    border: 1px solid #f00;
+    transition: background-color 0.3s ease, color 0.3s ease, text-shadow 0.3s ease;
+}
+
+.btn:hover, .btn-primary:hover, .btn:focus, .btn-primary:focus {
+    background-color: #611; /* Slightly lighter shade of the original background */
+    color: #ff3333; /* Slightly lighter red for text */
+    text-shadow: 0 0 10px #ff3333; /* Match text shadow to the new text color */
+    border: 1px solid #ff3333; /* Match border to the new text color */
+}
+/* Change the background of the navbar and footer */
+.navbar, .footer {
+    background-color: #0E0E0E !important; /* Ensure the navbar/footer background is #111 */
+    color: #411;
+    text-shadow: 0 0 15px #411;
+    margin: 0; /* Ensure no margin around navbar and footer */
+    border: none; /* Remove any borders that might cause a gap */
+    padding: 0; /* Remove padding */
+}
+
+/* Additional footer styling if needed */
+.footer {
+    padding: 20px;
+    text-align: center;
+}

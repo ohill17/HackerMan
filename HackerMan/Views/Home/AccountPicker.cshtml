@@ -1,0 +1,61 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@model List<HackerMan.Models.Account>
+<style>
+    #accountsContainer {
+        display: none; /* Ensure it is hidden initially */
+    }
+</style>
+<h1>
+    How to Hack
+</h1>
+<div>
+    <p>
+        The main goal of this game is to hack into pop culture and meme accounts on social media.
+    </p>
+    <p>
+        You will view a few posts and their profile descriptions and must guess their password to hack into the account. If you succeed, you win. If you fail, you're arrested.
+    </p>
+</div>
+<button id="revealButton" class="btn">
+    Reveal Accounts to Hack.
+</button>
+
+<div id="accountsContainer">
+    @foreach (var account in Model)
+    {
+        <div class="card" style="margin: 10px;">
+            <img src="@account.ProfilePictureUrl" class="card-img-top" alt="Profile Picture">
+            <div class="card-body">
+                <h5 class="card-title">@account.Username</h5>
+                <p class="card-text">@account.Bio</p>
+                <p class="card-text"><strong>Password:</strong> @account.Password</p>
+                <h6>Posts:</h6>
+                <ul>
+                    @foreach (var post in account.Posts)
+                    {
+                        <li>
+                            <p>@post.Content</p>
+                            <img src="@post.MediaUrl" alt="Post Media" style="width:100%;">
+                            <small>@post.PostedAt.ToString("g")</small>
+                        </li>
+                    }
+                </ul>
+            </div>
+        </div>
+    }
+</div>
+
+<script>
+    document.getElementById('revealButton').addEventListener('click', function () {
+        var container = document.getElementById('accountsContainer');
+        if (container.style.display === 'none' || container.style.display === '') {
+            container.style.display = 'block';
+        } else {
+            container.style.display = 'none';
+        }
+    });
+</script>
